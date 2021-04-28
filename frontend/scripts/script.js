@@ -1,6 +1,6 @@
 const form = document.getElementById("user-details-form");
 
-const API_BASE_URL = "http://localhost:8080";
+const API_BASE_URL = "https://backend-et-upgrad.herokuapp.com/";
 
 async function addUserAPI(name, age, phoneNo, email, address) {
   return fetch(`${API_BASE_URL}/addUser`, {
