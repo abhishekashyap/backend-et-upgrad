@@ -1,7 +1,7 @@
 package com.backend.endterm.controller;
 
 import com.backend.endterm.model.User;
-import com.backend.endterm.repository.UserRepository;
+import com.backend.endterm.service.UserService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,24 +9,24 @@ import java.util.List;
 @CrossOrigin
 @RestController
 public class UserController {
-    private UserRepository userRepository;
+    private final UserService userService;
 
-    public UserController(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserController(UserService userService) {
+        this.userService = userService;
     }
 
     @GetMapping("/")
     public List<User> getAllUsers() {
-        return userRepository.findAll();
+        return userService.findAll();
     }
 
     @PostMapping("/addUser")
     public User storeUser(@RequestBody User aUser) {
-        return userRepository.save(aUser);
+        return userService.save(aUser);
     }
 
     @DeleteMapping("/deleteUser/{id}")
     public void deleteUser(@PathVariable Long id) {
-        userRepository.deleteById(id);
+        userService.deleteById(id);
     }
 }

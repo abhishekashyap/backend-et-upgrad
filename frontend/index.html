@@ -12,6 +12,7 @@
       defer
       src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
     ></script>
+    <script defer src="./scripts/script.js"></script>
     <title>Profile</title>
   </head>
   <body>
@@ -34,7 +35,7 @@
       <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
           <a class="navbar-item is-active"> Profile </a>
-          <a class="navbar-item"> UserInfo </a>
+          <a class="navbar-item" href="./UserInfo.html"> User Info </a>
         </div>
       </div>
     </nav>
@@ -43,7 +44,7 @@
     <section class="section">
       <div class="container">
         <h1 class="title">Profile</h1>
-        <form action="">
+        <form action="" id="user-details-form">
           <div class="field">
             <label class="label">Name</label>
             <div class="control has-icons-left">
@@ -51,6 +52,7 @@
                 class="input"
                 type="text"
                 placeholder="John Doe"
+                id="name"
                 required
               />
               <span class="icon is-small is-left">
@@ -67,6 +69,7 @@
                     class="input"
                     type="number"
                     placeholder="21"
+                    id="age"
                     required
                   />
                   <span class="icon is-small is-left">
@@ -83,6 +86,7 @@
                     class="input"
                     type="number"
                     placeholder="9987654210"
+                    id="phone"
                     required
                   />
                   <span class="icon is-small is-left">
@@ -99,6 +103,7 @@
                 class="input"
                 type="email"
                 placeholder="johndoe@example.com"
+                id="email"
                 required
               />
               <span class="icon is-small is-left">
@@ -112,6 +117,7 @@
               <textarea
                 class="textarea"
                 placeholder="House #123, Downtown street, California - 01"
+                id="address"
                 required
               ></textarea>
             </div>
